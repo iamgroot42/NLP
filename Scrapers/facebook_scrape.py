@@ -1,7 +1,8 @@
 import facebook
 import csv
+import requests
 
-ACCESS_TOKEN = "CAACEdEose0cBAFfgprOpw3ZCGdMp75kNfpS0JDaJ5NPQIO3OlZBghoBZC75fcHZAYeG9DDAEohW0coxyAGwjQ4VkKyRQXWcZCZC6L8ZBINDj9DG0LOyXlCDnpL6kfr6VJM5LwLXpgZBoII6xkXrBZAKsBjGZBcZAHZCqtrC8KizUO3iBPqw0YZCbIw3c1kLeqUyCBTtAtXeaUcqYekgZDZD"
+ACCESS_TOKEN = "CAACEdEose0cBAMjmkaomn5FXRzTlWnVOHHQbPiFy33Lf11Po483AZAdEGSwDFVujhN0CY5mZCROJVEpOjTzeNs4KrU64l7nZCPsBQFaZAigApsLv7QmVDNhqx5DCyW8bLygecDD8jT5yax7AjZCZCQcciXTc2kZAt36ZChlwH35php032CIxnSblQ9ECYpsy7uv37iEiHKGBZAQZDZD"
 
 graph = facebook.GraphAPI(ACCESS_TOKEN)
 
@@ -10,9 +11,12 @@ def get_all_posts(userID):
 	node = userID + "/posts"
 	allposts = []
 
+	print userID + "/posts"
+
+	data = graph.get_object(node)
+
 	while True:
 		try:
-			data = graph.get_object(node)
 			for post in data['data']:
 				try:
 					allposts.append(post['message'])
@@ -21,11 +25,11 @@ def get_all_posts(userID):
 						allposts.append(post['description'])
 					except:
 						continue
-			node = data['paging']['next']	
+			data = requests.get(data['paging']['next']).json()
 		except:
 			break		
 
-	allposts = [[post] for post in allposts]
+	allposts = [[post.encode("utf-8")] for post in allposts]
 
 	with open('../Data/Raw/%s_posts.csv' % userID, 'wb') as f:
 		writer = csv.writer(f)
@@ -36,7 +40,7 @@ try:
 	f = open("facebook_users","r")
 	for handle in f:
 		try:
-			get_all_posts(handle)
+			get_all_posts(handle.strip())
 			print "Fetched posts for : ",handle
 		except:
 			print "Invalid user : ",handle
