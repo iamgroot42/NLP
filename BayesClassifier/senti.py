@@ -1,4 +1,5 @@
 import nltk
+from random import shuffle
 
 pos_tweets = []
 neg_tweets = []
@@ -10,7 +11,11 @@ for k in f.readlines():
 	else:
 		neg_tweets.append((l[1],'negative'))
 f.close()
-
+pos_tweets = list(set(pos_tweets))
+neg_tweets = list(set(neg_tweets))
+print pos_tweets
+shuffle(pos_tweets)
+shuffle(neg_tweets)
 pos_test = pos_tweets[int(len(pos_tweets)*0.8):]
 neg_test = neg_tweets[int(len(neg_tweets)*0.8):]
 pos_tweets = pos_tweets[:int(len(pos_tweets)*0.8)]
