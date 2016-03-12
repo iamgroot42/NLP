@@ -25,7 +25,10 @@ def getSentiment( text):
 	text = json.loads( json.dumps([text]))[0]
 	return classifier.classify(extract_features(text.split()))
 
-print "Enter Input"
-while True:
-	print getSentiment( raw_input()  ) 
-	
+
+
+if __name__ == "__main__":
+	print "Enter Input"
+	while True:
+		print getSentiment( raw_input()  ) 
+		

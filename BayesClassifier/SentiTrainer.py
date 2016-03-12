@@ -87,8 +87,8 @@ for (tweet,sentiment) in pos_test+neg_test:
 	if actual == 'negative' and expected == 'positive':
 		falsePos += 1
 
-	if actual == 'negative' and expected == 'negative':
-		print tweet
+	# if actual == 'negative' and expected == 'negative':
+	# 	print tweet
 
 print "Accuracy: ",hits*100.0/total,"%"
 print "false negatives " + str(flaseNegs)
