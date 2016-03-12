@@ -1,13 +1,17 @@
 import nltk
+from random import shuffle
 from sys import argv
 pos_tweets = []
 neg_tweets = []
 f = open("train-stanford.csv")
 prop = int(argv[1])
-for k in f.readlines()[:prop]:
+for k in f.readlines():
 	l = k.strip('.\n').split('","')
 	pos_tweets.append((l[5],l[0].strip("\"")))
 f.close()
+
+shuffle(pos_tweets)
+pos_tweets = pos_tweets[:prop]
 
 tweets = []
 for (words, sentiment) in pos_tweets + neg_tweets:
