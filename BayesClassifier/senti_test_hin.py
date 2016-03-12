@@ -49,8 +49,8 @@ def extract_features(document):
 training_set = nltk.classify.apply_features(extract_features, tweets)
 classifier = nltk.NaiveBayesClassifier.train(training_set)
 
-print "Enter Input"
+# print "Enter Input"
 
-while True:
-	tweet = raw_input()
-	print classifier.classify(extract_features(tweet.split()))
+# while True:
+# 	tweet = raw_input()
+# 	print classifier.classify(extract_features(tweet.split()))
