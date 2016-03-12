@@ -3,17 +3,17 @@ from random import shuffle
 
 pos_tweets = []
 neg_tweets = []
-f = open("train.txt")
+f = open("in_hindi.txt")
 for k in f.readlines():
-	l = k.strip('.\n').split('\t')
+	l = k.strip('.\n').split(' ')
 	if k[0] == '1':
-		pos_tweets.append((l[1],'positive'))
+		pos_tweets.append((' '.join(l[1:]),'positive'))
 	elif k[1] == '0':
-		neg_tweets.append((l[1],'negative'))
+		neg_tweets.append((' '.join(l[1:]),'negative'))
 f.close()
 pos_tweets = list(set(pos_tweets))
 neg_tweets = list(set(neg_tweets))
-print pos_tweets
+
 shuffle(pos_tweets)
 shuffle(neg_tweets)
 pos_test = pos_tweets[int(len(pos_tweets)*0.8):]
