@@ -7,8 +7,8 @@ pos_tweets = []
 neg_tweets = []
 
 
-# 
-for x in [ 'hindi_mov_reviews'  ,'tweet_neg_hin' , 'tweet_pos_hin'   ]:
+# 'hindi_mov_reviews'  ,'tweet_neg_hin' , 'tweet_pos_hin' 
+for x in [ 'tweet_from_emojis' ]:
 
 	with open("../Data/formatted_groundtruth/"+x+".json") as data_file:    
 		data = json.load(data_file)

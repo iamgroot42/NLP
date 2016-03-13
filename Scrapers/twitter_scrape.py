@@ -5,10 +5,10 @@ import json
 
 from tweepy import OAuthHandler
 
-consumer_key = 'zC0YU5Hgu4JKGYEMzEuVPmEjQ'
-consumer_secret = 'KmTvJfjvkSXbhNIwRGkKokLxImfjyfozC9spDyiKheb7YEwtj8'
-access_token = '4891935914-i6SmnOVQrOglkrh5eBfA79KqbGKaVezXd3D7kVV'
-access_secret = 'Tk3VLo6vD3TbSYjSyXeWlwdfkZmGZqI0waTYgnkeMgaOL'
+consumer_key = 'VBju2cHaiEoRaeUNLtCv1BUTc'
+consumer_secret = 'ucCQDSZ3HhVQRgIrBjBuNAOM230ezK4zdwCDEQnNt4Q1HiTR3G'
+access_token = '364720387-JRbwpmThBqqeKJg0815aLIfuHO7Q9GK8QKEEHC0k'
+access_secret = 'qWCQCWakD1gHHeFkGAkY0JN3Wvmu6geftR2GMo1oXFCq7'
  
 auth = OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_secret)
@@ -75,13 +75,24 @@ def search_tweets( q):
 
 
 
-search_tweets('mein :)')
-search_tweets('bacha :)')
-search_tweets('bacha :(')
-search_tweets('hamara :)')
-search_tweets('hamara :(')
-search_tweets('mera :)')
-search_tweets('mera :(')
+# search_tweets('mein :)')
+# search_tweets('bacha :)')
+# search_tweets('bacha :(')
+# search_tweets('hamara :)')
+# search_tweets('hamara :(')
+# search_tweets('mera :)')
+# search_tweets('mera :(')
+
+# search_tweets('tha :)')
+# search_tweets('tha :(')
+# search_tweets('tha <3')
+search_tweets('kharab :(')
+search_tweets('udas :(')
+# search_tweets('hai :)')
+search_tweets('hai :(')
+# search_tweets('film :)')
+# search_tweets('pyar :)')
+search_tweets('pyar :(')
 
 # if __name__ == "__main__":
 
