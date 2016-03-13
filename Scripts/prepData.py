@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 
 import json
-
+import glob
 
 f = open("../Data/unformatted_ground_truth/hindi_mov_reviews.txt")
 formatted = []
@@ -49,8 +49,30 @@ with open("../Data/formatted_groundtruth/tweet_neg_hin.json"  , 'w') as outfile:
 	json.dump(formatted, outfile)
 
 
+# now prep the emoje data
+files = glob.glob('../Data/emoji_tweets/*.json')
+formatted = []
 
-for x in ['tweet_neg_hin' , 'tweet_pos_hin' , 'hindi_mov_reviews' ]:
+for f in files:
+	with open(f) as data_file:    
+		data = json.load(data_file)
+
+		for d in data:
+			if (":)" in d ) or ( ":-)" in d):
+				d = d.replace(":)" , "")
+				formatted.append({ "text" : d , "val" : 'positive'})
+			elif (":(" in d ) or ( ":/" in d):
+				d = d.replace(":(" , "")
+				formatted.append({ "text" : d , "val" : 'negative'})
+
+
+with open("../Data/formatted_groundtruth/tweet_from_emojis.json"  , 'w') as outfile:
+	json.dump(formatted, outfile)
+
+
+
+
+for x in ['tweet_from_emojis' ]:
 
 	with open("../Data/formatted_groundtruth/"+x+".json") as data_file:    
 		data = json.load(data_file)
