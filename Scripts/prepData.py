@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-
+import string
 import json
 import glob
 
@@ -58,11 +58,16 @@ for f in files:
 		data = json.load(data_file)
 
 		for d in data:
+			d = d.replace("\n" , " ")
 			if (":)" in d ) or ( ":-)" in d):
 				d = d.replace(":)" , "")
+				d = d.lower()
+				d = "".join([c for c in d if c in string.letters or c in string.whitespace])
 				formatted.append({ "text" : d , "val" : 'positive'})
 			elif (":(" in d ) or ( ":/" in d):
 				d = d.replace(":(" , "")
+				d = d.lower()
+				d = "".join([c for c in d if c in string.letters or c in string.whitespace])
 				formatted.append({ "text" : d , "val" : 'negative'})
 
 

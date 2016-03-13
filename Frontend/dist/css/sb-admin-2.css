@@ -360,3 +360,7 @@ table.dataTable thead .sorting:after {
 .green_span {
     background-color: #84EF81;
 }
+
+.blue_span {
+    background-color: #99ccff;   
+}

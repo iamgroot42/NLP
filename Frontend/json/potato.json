@@ -1,7 +1,12 @@
 [
-	{"text" : "bj gygyu guyg yfy gh kgj  ghjjhvjh kj " , "val" : 0.67},
-	{"text" : "vjvb hjbjbkjb jkn ,knk, " , "val" : 0.98},
-	{"text" : "bjjkb jkb jbhkv tyf uf tg hjg yy ylh " , "val" : -0.67},
-	{"text" : "mvdiosjfoidsjfoids" , "val" : -1.67},
-	{"text" : "dfhsfdhsuifhsdu" , "val" : 0.0000001}
+	{"text" : "मैं एक अच्छा लड़का हूँ" , "val" : "positive"},
+	{"text" : "मैं एक बुरी लड़की हूं" , "val" : "negative"},
+	{"text" : "मैं एक हत्यारा हूँ" , "val" : "negative"},
+	{"text" : "आज एक अच्छा दिन है" , "val" : "positive"},
+	{"text" : "आज मुझे अच्छा लग रहा है" , "val" : "positive"},
+	{"text" : "मैं आज बुरा लगता है" , "val" : "negative"},
+	{"text" : "मैं खाना खा रहा हूं" , "val" : "neutral"},
+	{"text" : "मुझे तैरना अच्छा लगता है" , "val" : "positive"},
+	{"text" : "मैं खाना पसंद आया" , "val" : "positive"},
+	{"text" : "मुझे खाना  बेकार लगा " , "val" : "negative"}
 ]

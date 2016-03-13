@@ -34,8 +34,10 @@
                                 $("#page-wrapper").append("<div class = \"well tweet green_span\">" + data[i].text + "</div>");
                                 count++;
                             }
-                            else
+                            else if(data[i].val == "negative")
                                 $("#page-wrapper").append("<div class = \"well tweet red_span\">"  + data[i].text + "</div>");
+                            else
+                                $("#page-wrapper").append("<div class = \"well tweet blue_span\">"  + data[i].text + "</div>");
                         }
                         console.log(count);
                     });
