@@ -12,4 +12,4 @@ Paper reference : http://www.dai-labor.de/fileadmin/files/publications/narr-twit
 ### Running it
  * `pip install -r requirements`
  * `python BayesClassifier/eval.py` , takes `file_name` as input, where `file_name` is the file stored in the Input folder. Output is stored in the Output folder.
-
+ * To run the classifier for yourself, run `python  BayesClassifier/SentiAPI.py` to give custom input.
