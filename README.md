@@ -3,7 +3,7 @@
 Paper reference : http://www.dai-labor.de/fileadmin/files/publications/narr-twittersentiment-KDML-LWA-2012.pdf
 
 ### How it works
- * Data scraped from various Twitter accoutns (mostly Hindi based)
+ * Data scraped from various Twitter accounts (mostly Hindi based)
  * Ground truth obtained by using Google Translate
  * Classifier trained using a [Naive Bayes Classifier](https://en.wikipedia.org/wiki/Naive_Bayes_classifier)
  * Tweets are analyzed as they are
